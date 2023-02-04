@@ -1,0 +1,831 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    text-rendering: optimizeSpeed;
+    /* overflow-x: hidden; */
+    color: black;
+}
+
+.header {
+}
+
+.header .header__wrapper {
+    padding: 1.5em;
+    padding-bottom: 0;
+}
+
+.header .header__wrapper .header__header {
+    display: grid;
+    font-family: "Nunito", sans-serif;
+    padding-bottom: 3px;
+    border-bottom: 1px solid black;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "left logo right";
+}
+
+.header .header__wrapper .header__header .header__contact--left {
+    grid-area: left;
+    display: flex;
+    gap: 1em;
+    justify-content: left;
+}
+
+.header .header__wrapper .header__header .header__contact--left .contact__phone {
+    display: flex;
+}
+
+.header .header__wrapper .header__header .header__contact--left .contact__phone .phone__item {
+    text-decoration: none;
+    color: #949494;
+}
+
+.header .header__wrapper .header__header .header__contact--left .contact__phone .phone__item:hover {
+    color: #737373;
+}
+
+.header .header__wrapper .header__header .header__contact--left .contact__social {
+    display: flex;
+    gap: 0.5em;
+    font-size: 1.1em;
+}
+
+.header .header__wrapper .header__header .header__contact--left .contact__social a {
+    text-decoration: none;
+    color: #949494;
+}
+
+.header .header__wrapper .header__header .header__contact--left .contact__social a:hover {
+    color: #737373;
+}
+
+
+
+.header .header__wrapper .header__header .header__logo {
+    position: relative;
+    grid-area: logo;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    font-family: "Merriweather", sans-serif;
+    height: 3em;
+}
+
+.header .header__wrapper .header__header .header__logo a {
+    width: 10em;
+}
+
+.header .header__wrapper .header__header .header__logo a img {
+    position: absolute;
+    bottom: 0;
+    width: 10em;
+}
+
+
+.header .header__wrapper .header__header .header__logo a {
+    text-decoration: none;
+    color: #0C2F58;
+}
+
+.header .header__wrapper .header__header .header__logo :hover {
+    color: #155093;
+}
+
+.header .header__wrapper .header__header .header__contact--right {
+    grid-area: right;
+    display: flex;
+    justify-content: right;
+}
+
+.header .header__wrapper .header__header .header__contact--right .contact__email {
+    display: flex;
+    align-items: flex-start;
+}
+
+.header .header__wrapper .header__header .header__contact--right .contact__email .email__item {
+    display: flex;
+    gap: 0.25em;
+    align-items: center;
+    color: #949494;
+}
+
+
+@media (max-width: 1000px) {
+    .header .header__wrapper .header__header {
+        grid-template-columns: 0fr 1fr 0fr;
+    }
+
+    .header .header__wrapper .header__header .header__contact--left,
+    .header .header__wrapper .header__header .header__contact--right {
+        display: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+.nav {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    background-color: rgba(255, 255, 255, 0.75);
+    top: 0;
+    padding: 1.5em;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    z-index: 999999;
+}
+
+.nav .navbar {
+    display: flex;
+    gap: 2.5em;
+    font-size: 0.9em;
+    letter-spacing: 1.5px;
+}
+
+.nav .navbar a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav .navbar a:hover {
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}
+
+
+main {
+    background-color: #F6F4F2;
+}
+
+main .content {
+    display: grid;
+}
+
+main .content .bg-image {
+    position: relative;
+}
+
+main .content .bg-image:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9;
+}
+
+main .content .bg-image .bg-image__bg {
+    position: relative;
+    height: calc(100vh - 129px);
+}
+
+main .content .bg-image .bg-image__bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .content .bg-image .bg-image__text {
+    position: absolute;
+    bottom: 3em;
+    left: 12%;
+    width: 45%;
+    color: white;
+    z-index: 99;
+}
+
+main .content .bg-image .bg-image__text .text__title {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1.2px;
+    margin: 0;
+    margin-bottom: 0.25em;
+}
+main .content .bg-image .bg-image__text .text__content {
+    font-size: 2em;
+}
+
+@media (max-width: 1000px) {
+    main .content .bg-image .bg-image__text {
+        right: 12%;
+        width: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    main .content .bg-image .bg-image__text {
+        left: 5%;
+        right: 5%;
+    }
+    main .content .bg-image .bg-image__text .text__content {
+        font-size: 1.5em;
+    }
+}
+
+
+
+main .content .about {
+    background-color: white;
+}
+
+main .content .about .about__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5em;
+    padding: 4em 0;
+}
+
+main .content .about .about__wrapper .about__title {
+    width: 100%;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    background-color: #303133;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0.5em 0;
+}
+
+main .content .about .about__wrapper .about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+}
+
+
+
+main .content .about .about__wrapper .about__content .about__about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25em;
+    padding: 0 12%;
+}
+
+main .content .about .about__wrapper .about__content .about__about .about__about__title {
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: #6EB74C;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+main .content .about .about__wrapper .about__content .about__about > .divisor{
+    border-bottom: 3px solid #FDB822;
+    width: 9em;
+}
+
+main .content .about .about__wrapper .about__content .about__about .about__about__content {
+    font-weight: 300;
+    /* color: #696969; */
+    text-align: center;
+}
+
+
+
+main .content .about .about__wrapper .about__content .about__mivi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    background-color: #F6F4F2;
+    padding: 5em 12%;
+    gap: 3em;
+}
+
+main .content .about .about__wrapper .about__content .about__mivi .about__mivi__vision {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+}
+
+main .content .about .about__wrapper .about__content .about__mivi .about__mivi__vision .vision__title {
+    width: 100%;
+    text-align: left;
+    padding: 1em 0;
+    border-bottom: 3px solid #FDB822;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: #6EB74C;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+main .content .about .about__wrapper .about__content .about__mivi .about__mivi__vision .vision__content {
+    text-align: left;
+    font-weight: 300;
+    /* color: #343434; */
+}
+
+main .content .about .about__wrapper .about__content .about__mivi .about__mivi__mission {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+}
+
+main .content .about .about__wrapper .about__content .about__mivi .about__mivi__mission .mission__title {
+    width: 100%;
+    text-align: right;
+    padding: 1em 0;
+    border-bottom: 3px solid #FDB822;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: #6EB74C;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+main .content .about .about__wrapper .about__content .about__mivi .about__mivi__mission .mission__content {
+    text-align: right;
+    font-weight: 300;
+    /* color: #343434; */
+}
+
+@media (max-width: 1000px) {
+    main .content .about .about__wrapper .about__content .about__mivi {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        background-color: #F6F4F2;
+        padding: 5em 12%;
+        gap: 3em;
+    }
+}
+
+@media (max-width: 500px) {
+    main .content .about .about__wrapper .about__content .about__about {
+        padding: 0 5%;
+    }
+
+    main .content .about .about__wrapper .about__content .about__mivi {
+        padding: 5em 5%;
+    }
+}
+
+
+
+
+main .content .services {
+    background-color: white;
+}
+
+main .content .services .services__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5em;
+    padding: 4em 0;
+}
+
+main .content .services .services__wrapper .services__title {
+    width: 100%;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    background-color: #303133;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0.5em 0;
+}
+
+main .content .services .services__wrapper .services__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 3em;
+    padding: 0 12%;
+}
+
+main .content .services .services__wrapper .services__content .services__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+main .content .services .services__wrapper .services__content .services__item .item__img {
+}
+
+main .content .services .services__wrapper .services__content .services__item .item__img img {
+    width: 9em;
+    height: 9em;
+    border-radius: 50%;
+    border: 2px solid #FDB822;
+}
+
+main .content .services .services__wrapper .services__content .services__item .item__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+main .content .services .services__wrapper .services__content .services__item .item__content .item__title {
+    color: #0C2F58;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+main .content .services .services__wrapper .services__content .services__item .item__content .divisor {
+    border-bottom: 3px solid #FDB822;
+    width: 6em;
+}
+
+main .content .services .services__wrapper .services__content .services__item .item__content .item__text {
+    font-weight: 300;
+    /* color: #696969; */
+}
+
+@media (max-width: 1000px) {
+    main .content .services .services__wrapper .services__content {
+        grid-template-columns: 1fr;
+    }
+
+    main .content .services .services__wrapper .services__content .services__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    main .content .services .services__wrapper .services__content {
+        padding: 0 5%;
+    }
+}
+
+
+
+
+main .content .contact {
+    background-color: white;
+}
+
+main .content .contact .contact__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5em;
+    padding: 4em 0;
+}
+
+main .content .contact .contact__wrapper .contact__title {
+    width: 100%;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    background-color: #303133;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0.5em 0;
+}
+
+main .content .contact .contact__wrapper .contact__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+}
+
+
+
+main .content .contact .contact__wrapper .contact__content .contact__contact {
+    display: grid;
+    padding: 0 12%;
+    gap: 3em;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: auto;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__title {
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: #6EB74C;
+    font-size: 1.75em;
+    font-weight: 700;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form form {
+    margin-top: 0.525em;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .divisor {
+    border-bottom: 3px solid #FDB822;
+    width: 9em;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1.25em;
+    grid-template-areas: 
+        "name name name"
+        "email email cellphone"
+        "subject subject subject"
+        "message message message"
+        "accept accept accept";
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * {
+    display: flex;
+    flex-direction: column;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__name {
+    grid-area: name;
+}
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__email {
+    grid-area: email;
+}
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__cellphone {
+    grid-area: cellphone;
+}
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__subject {
+    grid-area: subject;
+}
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__message {
+    grid-area: message;
+}
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__accept {
+    grid-area: accept;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__accept a {
+    text-decoration: none;
+    color: #0d6efd;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__accept a:hover {
+    color: #20A6FF;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > * {
+    display: block;
+    box-sizing: border-box;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > input:not([type=checkbox]),
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > textarea {
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+    font-size: 1em;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    resize: none;
+    outline: none;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > input:not([type=checkbox]):focus,
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > textarea:focus {
+    border: 1px solid #6EB74C;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > input[type=checkbox] {
+    margin: 0;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__botton input[type=submit] {
+    outline: 0;
+    border: 0;
+    text-align: center;
+    padding: 0,4375em 1em;
+    margin-top: 1.25em;
+    min-height: 2.25em;
+    min-width: 12em;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 0.4em;
+    font-weight: 500;
+    font-size: 1em;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__botton input[type=submit]:hover {
+    background: #006e52;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__title {
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: #6EB74C;
+    font-size: 1.75em;
+    font-weight: 700;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .divisor {
+    border-bottom: 3px solid #FDB822;
+    width: 9em;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5em;
+    gap: 2em;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__content .content__text {
+    font-weight: 300;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__content hr {
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__content .content__data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__content .content__data > * {
+    display: block;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__content .content__data span {
+    font-weight: 300;
+}
+
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__content .content__data span strong {
+    font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+    main .content .contact .contact__wrapper .contact__content .contact__contact {
+        grid-template-columns: 1fr;
+    }
+
+    main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1.25em;
+        grid-template-areas: 
+            "name"
+            "email"
+            "cellphone"
+            "subject"
+            "message"
+            "accept";
+    }
+}
+
+@media (max-width: 500px) {
+    main .content .contact .contact__wrapper .contact__content .contact__contact {
+        padding: 0 5%;
+    }
+}
+
+
+
+
+.footer {
+    background-color: #ECEAE6;
+}
+
+.footer .info {
+    display: flex;
+    padding: 30px;
+    border-bottom: 1px solid black;
+    gap: 20px;
+    justify-content: center;
+}
+.footer .info > div {
+    display: flex;
+    flex-basis: 20%;
+    gap: 3px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer .info div h5 {
+    color: black;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.footer .info div a {
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.footer .info div a:hover {
+    color: rgb(100, 100, 100);
+}
+
+.footer .info .social {
+    display: flex;
+    gap: 9px;
+}
+
+.footer .info .social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.footer .info .social a:hover {
+    color: rgb(100, 100, 100);
+    border: 1px solid rgb(100, 100, 100);
+}
+
+.footer .foot {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .foot > * {
+    flex-basis: 13.34%;
+    text-align: center;
+}
+
+.footer .foot .foot__img img {
+    width: 9em;
+}
+
+
+.footer .foot a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer .foot a:hover {
+    color: rgb(100, 100, 100);
+}
+
+@media (max-width: 1000px){
+    .footer .info {
+        flex-direction: column;
+    }
+
+    .footer .foot {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+}
