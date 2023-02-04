@@ -12,7 +12,9 @@ body {
     color: black;
 }
 
-.header {
+.header{
+    position: relative;
+    z-index: 999999;
 }
 
 .header .header__wrapper {
@@ -195,7 +197,7 @@ main .content .bg-image:before {
 
 main .content .bg-image .bg-image__bg {
     position: relative;
-    height: calc(100vh - 129px);
+    height: calc(var(--vh)*100 - 136px);
 }
 
 main .content .bg-image .bg-image__bg img {
@@ -425,9 +427,6 @@ main .content .services .services__wrapper .services__content .services__item {
     display: flex;
     align-items: flex-start;
     gap: 1em;
-}
-
-main .content .services .services__wrapper .services__content .services__item .item__img {
 }
 
 main .content .services .services__wrapper .services__content .services__item .item__img img {
@@ -828,4 +827,25 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
         flex-direction: column;
         padding-bottom: 20px;
     }
+}
+
+.whatsapp {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 3.75rem;
+    height: 3.75rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: #25d365ac;
+    color: #ffffffac;
+    border-radius: 50%;
+    font-size: 2rem;
+    z-index: 9999999;
+}
+
+.whatsapp:hover {
+    background-color: #2bac5aac;
 }

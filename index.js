@@ -57,6 +57,11 @@ app.post("/contact", multer().array(), async (req, res) => {
     })
 })
 
+app.get('*', function(req, res) {
+    res.redirect('/');
+});
+
+
 // Port
 const PORT = process.env.PORT || 3000;
 
